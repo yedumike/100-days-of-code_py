@@ -7,3 +7,4 @@ while True:
             fac.append(i)
     fac.sort()
     print(fac)
+    
