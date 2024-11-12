@@ -36,20 +36,19 @@ while True:
     computer_choice = random.randint(0,2)
     options = ["Rock", "Paper","Scissors"]
 
+    if 0 <= user_choice <= 2:
+        print(f"user: {gestures[user_choice]}\ncomputer: {gestures[computer_choice]}")
+
+
     if user_choice > 2:
         print("Option is invalid,You lose!")
     elif user_choice == 0 and computer_choice == 2:
-        print(f"user: {gestures[user_choice]}\ncomputer: {gestures[computer_choice]}")
         print(f"{options[user_choice]} beats {options[computer_choice]}, You win!")
     elif user_choice ==2 and computer_choice == 0:
-        print(f"user: {gestures[user_choice]}\ncomputer: {gestures[computer_choice]}")
         print("Rock beats scissors, You lose!")
     elif user_choice > computer_choice:
-        print(f"user: {gestures[user_choice]}\ncomputer: {gestures[computer_choice]}")
         print(f"{options[user_choice]} beats {options[computer_choice]}, You win!")
     elif user_choice < computer_choice:
-        print(f"user: {gestures[user_choice]}\ncomputer: {gestures[computer_choice]}")
         print(f"{options[computer_choice]} beats {options[user_choice]}, You lose!")
     else:
-        print(f"user: {gestures[user_choice]}\ncomputer: {gestures[computer_choice]}")
         print("draw!")
