@@ -2,7 +2,7 @@
 
 import time
 
-my_time = int(input("For how long: "))
+my_time = int(input("For how long(in seconds): "))
 
 for i in range(my_time,0,-1):
     seconds = i % 60
