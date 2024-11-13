@@ -66,6 +66,16 @@ hangmanpics = [
 ''']
 
 
+print("""
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \\ / _` | '_ \\ / _` | '_ ` _ \\ / _` | '_ \\ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|
+                    __/ |                      
+                   |___/                          
+""")
 
 word_list = ["apple","beans","egg","yoghurt","aardvark"]
 
@@ -93,6 +103,14 @@ while not game_over:
     final = "".join(placeholder)
     if final == random_word:
             print(f"Well done! Your word is: {final}")
+            print("""
+__   __           __        ___       _ 
+\\ \\ / /__  _   _  \\ \\      / (_)_ __ | |
+ \\ V / _ \\| | | |  \\ \\ /\\ / /| | '_ \\| |
+  | | (_) | |_| |   \\ V  V / | | | | |_|
+  |_|\\___/ \\__,_|    \\_/\\_/  |_|_| |_(_)
+  
+                  """)
             break
     if guess not in random_word:
         life = life - 1
