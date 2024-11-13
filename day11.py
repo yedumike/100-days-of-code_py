@@ -3,7 +3,7 @@ import random
 #ROCK PAPER SCISSORS
 
 rock = """
-_______
+    _______
 ---'   ____)
       (_____)
       (_____)
