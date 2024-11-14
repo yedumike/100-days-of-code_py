@@ -54,10 +54,14 @@ def ceaser(text, shift_amount, encode_or_decode):
          return
     if encode_or_decode == "decode":
             shift_amount *= -1
-    for i in text:
-        print(shift_amount)
-        shifted_position = (alphabet.index(i) + shift_amount) % 25
-        output_text += alphabet[shifted_position]
+    
+    for letter in text:
+        if letter not in alphabet:
+             output_text += letter 
+        else:
+            print(shift_amount)
+            shifted_position = (alphabet.index(letter) + shift_amount) % 25
+            output_text += alphabet[shifted_position]
     print("Here is your encoded result" if encode_or_decode == "encode" else "Here is your decoded result",output_text)
         
 
