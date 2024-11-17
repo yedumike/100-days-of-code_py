@@ -1,3 +1,6 @@
+"""LEAP YEAR PROGRAMME: Leap years are divisible by 4,
+except for years divided by 100 only includes those also divide by 400"""
+
 def is_leap_year(year):
     if year% 4 == 0:
         if year < 100:
