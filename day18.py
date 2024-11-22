@@ -347,4 +347,5 @@ def higher_lower():
   elif play_again == 'n':
     print("Thanks for playing!")
 
+
 higher_lower()
