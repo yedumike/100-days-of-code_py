@@ -7,29 +7,30 @@ menu = Menu()
 coffee_maker = CoffeeMaker()
 money_machine = MoneyMachine()
 
-
-user_request = input(f"What do you want:{menu.get_items()}?\n")
-
-
-#find user request
-order = menu.find_drink(user_request)
-
-name = order.name
-cost = order.cost
-ingredients = order.ingredients
-
-# print(f"Your {name} costs {cost} and requires {ingredients}")
-
-
+#1 Print reports
+money_machine.report()
 coffee_maker.report()
+is_on = True
 
-if coffee_maker.is_resource_sufficient(order):
-    print("sufficient")
-    coffee_maker.make_coffee(order)
-    print(f"Cost is: ${cost:.2f}")
-    money_machine.make_payment(cost)
-    money_machine.report()
 
-else:
-    print("Not sufficient")
+while is_on:
+    options = menu.get_items()
+    choice = input(f"What do you want:{options}?\n")
+    if choice == "off":
+        is_on = False
+    elif choice == 'report':
+        coffee_maker.report()
+        money_machine.report()
+    else:
+        order = menu.find_drink(choice)
+        if coffee_maker.is_resource_sufficient(order) and money_machine.make_payment(order.cost) :
+            print("sufficient")
+            print(f"Cost is: ${order.cost:.2f}")
+            coffee_maker.make_coffee(order)
+            money_machine.report()
+        else:
+            print("Not sufficient")
+
+
+
 
